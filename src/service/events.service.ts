@@ -10,7 +10,7 @@ export class EventService {
    private _eventsurl='data/events.json';
    constructor(private _http: Http){}
 
-   getproducts(): Observable<IEvent[]> {
+   getEvents(): Observable<IEvent[]> {
       return this._http.get(this._eventsurl)
       .map((response: Response) => <IEvent[]> response.json())
       .do(data => console.log(JSON.stringify(data)));

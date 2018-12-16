@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { IEvent } from '../interfaces/events';
+import { EventService } from '../service/events.service';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,17 +19,16 @@ export class MyApp {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
-      
+
       statusBar.styleDefault();
       this.statusBar.overlaysWebView(true);
       this.statusBar.backgroundColorByHexString('#03756c');
       splashScreen.hide();
-           
 
-      
+
+
 
     });
   }
 
 }
-
