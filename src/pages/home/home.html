@@ -4,12 +4,12 @@
             <ion-icon class="menu" name="menu"></ion-icon>
         </button>
         <ion-title item-start>
-            volstory 
+            volstory
             <ion-icon class="search" ios="ios-search" md="md-search" item-end></ion-icon>
-            
+
             <ion-icon class="option" ios="ios-options" md="md-options" clear (click)="showHideDiv()" >
-            </ion-icon>   
-            
+            </ion-icon>
+
         </ion-title>
     </ion-toolbar>
 </ion-header>
@@ -29,10 +29,10 @@
 </script> -->
 
 
-<ion-content> 
-    
+<ion-content>
+
     <!-- <div *ngIf="buttonClicked" padding class="ovrlay"  >
-        
+
             <ion-segment [(ngModel)]="filter">
                 <ion-segment-button value="time" >
                     Time
@@ -71,29 +71,29 @@
                     <input type="checkbox"  value="thisweekend">
                     <span class="checkmark"></span>
                 </label>
-            </ion-item> 
+            </ion-item>
             <ion-item no-lines>
                 <label class="container">This Month
                     <input type="checkbox"  value="thismonth">
                     <span class="checkmark"></span>
                 </label>
-            </ion-item> 
-        </ion-list>  
-         
+            </ion-item>
+        </ion-list>
+
     </div>
 
     <div *ngIf="buttonClicked" padding >
         <div class="my-overlay" [hidden]="overlayHidden">
         </div>
     </div> -->
-    
+
     <!--ooooooooooooooooooooooofirst oooooverlay^^^^^^^ this is different above is more accurate-->
     <!-- <div >
         <button full (click)="hideOverlay()">Click me</button>
     </div> -->
-    
+
     <!-- <div *ngIf="buttonClicked" padding class="ovrlay">
-        <div class="my-overlay" padding [hidden]="overlayHidden">   
+        <div class="my-overlay" padding [hidden]="overlayHidden">
             <div class="seg">
                 <ion-segment [(ngModel)]="filter">
                     <ion-segment-button value="Time">
@@ -107,7 +107,7 @@
                     </ion-segment-button>
                 </ion-segment>
             </div>
-        </div>       
+        </div>
         <div [ngSwitch]="filter">
             <ion-list *ngSwitchCase="Time">
                 <ion-item no-lines>
@@ -133,13 +133,13 @@
                                 <input type="checkbox"  value="thisweekend">
                                 <span class="checkmark"></span>
                             </label>
-                        </ion-item> 
+                        </ion-item>
                         <ion-item no-lines>
                             <label class="container">This Month
                                 <input type="checkbox"  value="thismonth">
                                 <span class="checkmark"></span>
                             </label>
-                        </ion-item>   
+                        </ion-item>
                     </ion-list>
                 </div>
             <ion-grid>
@@ -148,41 +148,41 @@
                 </ion-row>
             </ion-grid>
         </div> -->
-    
-    
+
+
     <ion-list><ion-label class="events">Events</ion-label>
         <div class="adjust"></div>
-        <ion-card>
+        <ion-card *ngFor = 'let event of events'>
             <ion-item class="diff" no-lines>
                 <img class="e-icon" src="../../assets/imgs/Category-Environment.svg" item-start>
-                <p class="subtitle">Gundicha Cleaning</p>
-                <p class="subtext">Environmental Care
+                <p class="subtitle">{{event.volunteerName}}</p>
+                <p class="subtext">{{event.eventCategory}}
                     <img class="s-icons" src="../../assets/imgs/SystemIcons/only followers.svg">
                 </p>
             </ion-item>
-            
+
             <ion-item class="details" item-start no-lines>
                 <img item-start class="e-details" src="../../assets/imgs/SystemIcons/calendar.svg">
-                    <ion-label class="space">Fri, Jan 7, 13 Day Event</ion-label>
+                    <ion-label class="space">{{event.scheduledOn}}</ion-label>
                 </ion-item>
                 <ion-item class="details" item-start no-lines>
                     <img item-start class="e-details" src="../../assets/imgs/SystemIcons/person (user).svg">
-                    <ion-label class="space">Aditya Singh</ion-label>
+                    <ion-label class="space">{{event.volunteerName}}</ion-label>
                 </ion-item>
                 <ion-item class="details" item-start no-lines>
                     <img item-start class="e-details" src="../../assets/imgs/SystemIcons/location.svg">
-                    <ion-label class="space">NVCC Katraj</ion-label>
+                    <ion-label class="space">{{event.venue}}</ion-label>
                 </ion-item>
                 <ion-item class="lines">
                     <div>
                         <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/share.svg"></button>
                         <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/star border.svg"></button>
                         <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/join event 2.svg"></button>
-                    </div>    
+                    </div>
                 </ion-item><div class="adjust"></div>
-            </ion-card> 
+            </ion-card>
             <ion-card>
-                <!-- item 2  Event 2 starts... -->     
+                <!-- item 2  Event 2 starts... -->
                 <ion-item class="diff" no-lines>
                     <img class="e-icon" src="../../assets/imgs/Category-Animal Welfare.svg" item-start>
                     <p class="subtitle">Pet Adoption Camp</p>
@@ -190,7 +190,7 @@
                         <img class="s-icons" src="../../assets/imgs/SystemIcons/public event.svg" >
                     </p>
                 </ion-item>
-                
+
                 <ion-item class="details" item-start no-lines>
                     <img item-start class="e-details" src="../../assets/imgs/SystemIcons/calendar.svg">
                     <ion-label class="space">Mon, Jul 03, 01 Day Event</ion-label>
@@ -208,7 +208,7 @@
                         <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/share.svg"></button>
                         <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/star border.svg"></button>
                         <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/join event 2.svg"></button>
-                    </div>    
+                    </div>
                 </ion-item> <div class="adjust"></div>
             </ion-card>
             <!--item 3 event 3  starts here   -->
@@ -220,7 +220,7 @@
                     <img class="s-icons" src="../../assets/imgs/SystemIcons/public event.svg" >
                 </p>
             </ion-item>
-            
+
             <ion-item class="details" item-start no-lines>
                 <img item-start class="e-details" src="../../assets/imgs/SystemIcons/calendar.svg">
                 <ion-label class="space">Mon, Jul 03, 01 Day Event</ion-label>
@@ -238,12 +238,12 @@
                     <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/share.svg"></button>
                     <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/star border.svg"></button>
                     <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/join event 2.svg"></button>
-                </div>    
+                </div>
             </ion-item> <div class="adjust"></div>
         </ion-card>
 
         <ion-card>
-            <!-- item 2  Event 2 starts... -->     
+            <!-- item 2  Event 2 starts... -->
             <ion-item class="diff" no-lines>
                 <img class="e-icon" src="../../assets/imgs/Category-Animal Welfare.svg" item-start>
                 <p class="subtitle">Pet Adoption Camp</p>
@@ -251,7 +251,7 @@
                     <img class="s-icons" src="../../assets/imgs/SystemIcons/public event.svg" >
                 </p>
             </ion-item>
-            
+
             <ion-item class="details" item-start no-lines>
                 <img item-start class="e-details" src="../../assets/imgs/SystemIcons/calendar.svg">
                 <ion-label class="space">Mon, Jul 03, 01 Day Event</ion-label>
@@ -269,7 +269,7 @@
                     <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/share.svg"></button>
                     <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/star border.svg"></button>
                     <button class="b-share"><img class="share" src="../../assets/imgs/SystemIcons/join event 2.svg"></button>
-                </div>    
+                </div>
             </ion-item> <div class="adjust"></div>
         </ion-card>
 
@@ -286,7 +286,7 @@
     </ion-grid> -->
     <ion-fab bottom right edge class="add">
         <button class="add" ion-fab color="f3b000" clear (click)="createEvent()">
-            <img class="plus" src="../../assets/imgs/SystemIcons/plus for floating button.svg"> 
+            <img class="plus" src="../../assets/imgs/SystemIcons/plus for floating button.svg">
         </button>
     </ion-fab>
 </ion-content>
@@ -304,33 +304,33 @@
                 <img src="../../assets/imgs/SystemIcons/settings.svg" class="addalbum" item-start>
                 <ion-label class="addP">Settings</ion-label>
             </ion-item>
-            
+
             <ion-item class="wide" no-lines>
                 <img src="../../assets/imgs/SystemIcons/info.svg" class="addalbum" item-start>
                 <ion-label class="addP">App Info</ion-label>
             </ion-item>
-            
+
             <ion-item class="wide" no-lines>
                 <img src="../../assets/imgs/SystemIcons/FAQ.svg" class="addalbum" item-start>
                 <ion-label class="addP">FAQ</ion-label>
             </ion-item>
-            
+
             <ion-item class="wide" no-lines>
                 <img src="../../assets/imgs/SystemIcons/terms and privacy.svg" class="addalbum" item-start>
                 <ion-label class="addP">Terms and Privacy</ion-label>
             </ion-item>
-            
+
             <ion-item class="wide" no-lines>
                 <img src="../../assets/imgs/SystemIcons/invite friends.svg" class="addalbum" item-start>
                 <ion-label class="addP">Invite Friends</ion-label>
             </ion-item>
-            
+
             <ion-item class="wide" no-lines>
                 <img src="../../assets/imgs/SystemIcons/sign out.svg" class="addalbum" item-start>
                 <ion-label class="addP">Sign Out</ion-label>
             </ion-item>
-            
-           
+
+
         </ion-list>
     </ion-content>
 </ion-menu>
