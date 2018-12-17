@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { IEvent } from '../interfaces/events';
+import { IEvent } from '../../interfaces/events';
 import { EventService } from '../../service/events.service';
 import { CreateEventPage } from '../create-event/create-event';
 import { MyprofilePage } from '../myprofile/myprofile';
@@ -17,11 +17,11 @@ export class HomePage {
 
  overlayHidden: boolean = false;
   filter= 'time';
-  constructor(private _product: EventService) {
+  constructor(public navCtrl: NavController, public _ievents: EventService) {
   }
 
   ngOnInit(): void {
-    this.ievents.getEvents()
+    this._ievents.getEvents()
     .subscribe(ievents => this.ievents = ievents);
   }
 

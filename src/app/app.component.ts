@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { IEvent } from '../interfaces/events';
-import { EventService } from '../service/events.service';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
