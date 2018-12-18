@@ -7,7 +7,7 @@ import { IEvent } from '../interfaces/events';
 
 @Injectable()
 export class EventService {
-   private _eventsurl='data/events.json';
+   private _eventsurl='../assets/data/events.json';
    constructor(private _http: Http){}
 
    getEvents(): Observable<IEvent[]> {
